@@ -1,10 +1,11 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter, Youtube } from "lucide-react";
 import { cn } from '@/lib/utils';
 import { useToast } from "@/hooks/use-toast";
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export const ContactSection = () => {
-
+    const form = useRef();
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -13,15 +14,29 @@ export const ContactSection = () => {
 
         setIsSubmitting(true);
 
-        setTimeout(() => {
-            toast({
-                title: "Message Sent!",
-                description: "Thank you for your message. I'll get back to you soon."
-            })
+        emailjs
+          .sendForm('service_nc1rt8c', 'template_vyptpei', form.current, {
+            publicKey: 'IoJ5bETruij4_nHUD',
+          })
+          .then(
+            () => {
+                    toast({
+                        title: "Message Sent!",
+                        description: "Thank you for your message. I'll get back to you soon."
+                    })
+        
+                    setIsSubmitting(false);
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                    toast({
+                        title: "Message Not Sent!",
+                        description: `Some error might have occured. Please report me on "piyushv340@gmail.com"`
+                    })
 
-            setIsSubmitting(false);
-
-        }, 1500);
+                    setIsSubmitting(false);
+                },
+            );
     }
 
     return (
@@ -132,7 +147,7 @@ export const ContactSection = () => {
                     <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
                         <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-                        <form className="space-y-6 contact-form">
+                        <form ref={form} className="space-y-6 contact-form">
                             <div>
                                 <label 
                                     htmlFor="name"
