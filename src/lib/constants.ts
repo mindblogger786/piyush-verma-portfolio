@@ -5,14 +5,14 @@ export const SITE_CONFIG = {
   title: "Piyush Verma — Full-Stack Developer",
   description:
     "Full-Stack Developer crafting performant web applications with Python, Django, React & MERN Stack.",
-  url: "https://piyushverma.dev",
+  url: "https://piyush-verma-portfolio.vercel.app/",
   email: "piyushv340@gmail.com",
   phone: "+91 9170064306",
-  location: "Lucknow, India",
+  location: "Lucknow, UP, India",
   socials: {
-    github: "https://github.com/piyushverma",
-    linkedin: "https://linkedin.com/in/piyushverma",
-    twitter: "https://twitter.com/piyushverma",
+    github: "https://github.com/mindblogger786",
+    linkedin: "https://www.linkedin.com/in/piyush-kumar-verma-048492284",
+    twitter: "https://twitter.com/",
   },
 };
 
