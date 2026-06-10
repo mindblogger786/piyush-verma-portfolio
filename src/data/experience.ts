@@ -3,7 +3,7 @@ export const experiences = [
     id: "1",
     role: "Associate Administrator",
     company: "Diya Industrial Technologies Pvt. Ltd.",
-    period: "Mar 2026",
+    period: "Mar 2026 - Present",
     location: "Lucknow, UP",
     type: "Full-time",
     description:
@@ -21,7 +21,7 @@ export const experiences = [
     company: "TVM Technology Pvt. Ltd.",
     period: "Feb 2025 – Jan 2026",
     location: "Lucknow, UP",
-    type: "Part-time",
+    type: "Full-time",
     description:
       "Delivered personalized calculus instruction, simplifying complex concepts and fostering analytical thinking in students.",
     achievements: [
